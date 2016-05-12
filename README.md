@@ -14,4 +14,6 @@ Customer has many orders and has one cart.
 Order and cart belongs to customer.
 Items has many orders and carts.
 
-Username:Song           Password:123
+Login:
+Username-Song
+Password-123
