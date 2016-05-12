@@ -1,0 +1,22 @@
+<div class="login">
+  <div class="container">
+    <div class="form">
+
+    <h1>Sign up</h1>
+    
+    <img src="https://www.seoclerk.com/pics/want15901-1ph23q1404289134.jpg" style="width:290px;height:150px;">
+    
+    <p>Enter the following information</p>
+
+    <%= form_for(@user) do |f| %>
+      <%= f.text_field :username, :placeholder => "User Name" %>
+      <%= f.password_field :password, :placeholder => "Password" %>
+      <%= f.submit "Create an account", class: "btn-submit" %>
+    <% end %>
+    
+    <br>
+    <%= link_to 'Back', login_path %>
+  
+    </div>
+  </div>
+</div>
