@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<p>Log in as: <%= current_user.username %></p>
+
 <h1>List of Items</h1>
 
 <img src="https://www.schooltoolbox.com/stbDirect/images/home2.png" style="width:290px;height:100px;">
@@ -39,3 +41,6 @@
 <%= link_to 'Customer Information', customers_path %>
 <%= link_to 'Your Order', orders_path %>
 <%= link_to 'Your Cart', carts_path %>
+
+<br><br>
+<%= link_to "Logout", 'logout' %>

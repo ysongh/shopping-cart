@@ -71,4 +71,6 @@ class CustomersController < ApplicationController
     def customer_params
       params.require(:customer).permit(:username, :password)
     end
+    
+    before_action :require_user, only: [:index, :show]
 end
