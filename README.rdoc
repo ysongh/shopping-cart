@@ -1,7 +1,7 @@
 == README
 
 My link:
-https://powerful-tor-84857.herokuapp.com/login
+https://shrouded-anchorage-25713.herokuapp.com/login
 
 Summary:
 Customer has many orders and has one cart.
@@ -9,5 +9,5 @@ Order and cart belongs to customer.
 Items has many orders and carts.
 
 Login:
-Username-Song
-Password-123
+Username-admin
+Password-111
