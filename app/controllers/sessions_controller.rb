@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-    
   def new
   end
   
@@ -7,9 +6,9 @@ class SessionsController < ApplicationController
     @user = User.find_by_username(params[:session][:username])
     if @user && @user.authenticate(params[:session][:password])
       session[:user_id] = @user.id
-      redirect_to '/customers'
+      redirect_to '/orders'
     else
-      redirect_to '/login'
+      redirect_to '/error'
     end 
   end
   
