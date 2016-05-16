@@ -16,6 +16,7 @@ Items has many orders and carts.
 
 Admin can access everything.
 Customer can only access the items, orders, and carts.
+Customer can only see their own order and cart.
 
 Login:
 Username-admin
