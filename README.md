@@ -7,7 +7,7 @@
     (https://project-2-ysongh.c9users.io/).
     
 My link:
-https://shrouded-anchorage-25713.herokuapp.com/login
+https://shrouded-anchorage-25713.herokuapp.com/logz
 
 Summary:
 Customer has many orders and has one cart.
