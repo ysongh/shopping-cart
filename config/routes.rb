@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :carts
   resources :customers
   
+  root 'sessions#new'
+  
   get 'signup'  => 'users#new'
   
   get '/login' => 'sessions#new'
@@ -13,13 +15,16 @@ Rails.application.routes.draw do
   
   get '/error' => 'sessions#index'
   get '/permission' => 'users#index'
+  
+  get '/cart' => 'cart#index'
+  get '/cart/:id' => 'cart#add'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

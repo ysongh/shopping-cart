@@ -18,11 +18,13 @@
   <tbody>
     <% @carts.each do |cart| %>
       <tr>
-        <td><%= cart.customer_id %></td>
-        <td><%= current_user.username %></td>
-        <td><%= link_to 'Show', cart %></td>
-        <td><%= link_to 'Edit', edit_cart_path(cart) %></td>
-        <td><%= link_to 'Remove', cart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if cart.customer.username == current_user.username %>
+          <td><%= cart.customer_id %></td>
+          <td><%= cart.username %></td>
+          <td><%= link_to 'Show', cart %></td>
+          <td><%= link_to 'Edit', edit_cart_path(cart) %></td>
+          <td><%= link_to 'Remove', cart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

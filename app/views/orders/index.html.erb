@@ -18,11 +18,13 @@
   <tbody>
     <% @orders.each do |order| %>
       <tr>
-        <td><%= order.orderDate %></td>
-        <td><%= current_user.username %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Remove', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if order.customer.username == current_user.username %>
+          <td><%= order.orderDate %></td>
+          <td><%= order.customer.username  %></td>
+          <td><%= link_to 'Show', order %></td>
+          <td><%= link_to 'Edit', edit_order_path(order) %></td>
+          <td><%= link_to 'Remove', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

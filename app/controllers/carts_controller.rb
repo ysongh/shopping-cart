@@ -20,7 +20,24 @@ class CartsController < ApplicationController
   # GET /carts/1/edit
   def edit
   end
-
+  
+  def add
+    id = parms[:id]
+      if sessions[:cart]then
+        cart = session[:cart]
+      else
+        session[:cart]={}
+        cart = session[:cart]
+      end
+      
+      if cart[id]then
+        cart[id] = cart[id]+1
+      else
+        cart[id]=1
+      end
+      redirect_to :action => :index
+    end
+  
   # POST /carts
   # POST /carts.json
   def create
