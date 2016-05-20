@@ -1,7 +1,7 @@
 == README
 
 My link:
-https://shrouded-anchorage-25713.herokuapp.com/login
+https://shrouded-anchorage-25713.herokuapp.com
 
 Summary:
 Customer has many orders and has one cart.
