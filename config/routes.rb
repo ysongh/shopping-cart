@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :users
   resources :orders
-  resources :items
   resources :carts
+  resources :users
+  resources :items
   resources :customers
   
   root 'sessions#new'
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get 'logout' => 'sessions#destroy'
   
   get '/error' => 'sessions#index'
-  get '/permission' => 'users#index'
+  get '/users' => 'users#index'
   
   get '/cart' => 'cart#index'
   get '/cart/:id' => 'cart#add'

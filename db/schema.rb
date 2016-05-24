@@ -11,15 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160510230709) do
+ActiveRecord::Schema.define(version: 20160524213059) do
 
   create_table "carts", force: :cascade do |t|
-    t.integer  "customer_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  add_index "carts", ["customer_id"], name: "index_carts_on_customer_id"
+  add_index "carts", ["user_id"], name: "index_carts_on_user_id"
 
   create_table "customers", force: :cascade do |t|
     t.string   "username"
@@ -37,13 +37,13 @@ ActiveRecord::Schema.define(version: 20160510230709) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.date     "orderDate"
-    t.integer  "customer_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.date     "Date"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  add_index "orders", ["customer_id"], name: "index_orders_on_customer_id"
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "username"

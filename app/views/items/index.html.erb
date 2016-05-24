@@ -20,12 +20,17 @@
     <% @items.each do |item| %>
       <tr>
         <td><%= item.name %></td>
-        <td><%= item.qauntity %></td>
+        <% if item.qauntity <= 0 %>
+          <td>Out of Stock</td>
+        <% end %>
+        <% if item.qauntity >= 1 %>
+          <td><%= item.qauntity%></td>
+        <% end %>
         <td><%= number_to_currency item.price %></td>
         <td><%= link_to 'Show', item %></td>
         <td><%= link_to 'Edit', edit_item_path(item) %></td>
         <td><%= link_to 'Remove', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><a href = "/carts/<%= item.id %>">Add to Cart</a></td>
+        <td><%= link_to 'Add to cart', carts_path %></td>
       </tr>
     <% end %>
   </tbody>
@@ -42,6 +47,7 @@
 <%= link_to 'Customer Information', customers_path %>
 <%= link_to 'Your Order', orders_path %>
 <%= link_to 'Your Cart', carts_path %>
+<%= link_to 'User Information', users_path %>
 
 <br><br>
 <%= link_to "Logout", 'logout' %>

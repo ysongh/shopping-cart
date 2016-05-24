@@ -1,14 +1,30 @@
-<p id="notice"><%= notice %></p>
+<%= link_to 'Back', carts_path %>
 
-<p>
-  <strong>Orderdate:</strong>
-  <%= @order.orderDate %>
-</p>
+<table table style = "border-style: dotted solid">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Qauntity</th>
+      <th>Price</th>
+      <th>Total</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-<p>
-  <strong>Customer:</strong>
-  <%= @order.customer %>
-</p>
-
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+          <td><%= item.name %></td>
+          <% if item.qauntity <= 0 %>
+            <td>Out of Stock</td>
+          <% end %>
+          <% if item.qauntity >= 1 %>
+            <td><%= item.qauntity%></td>
+          <% end %>
+          <td><%= number_to_currency item.price %></td>
+          <td><%= number_to_currency item.qauntity + item.price %></td>
+      </tr>
+    <% end %>
+  
+  </tbody>
+</table>

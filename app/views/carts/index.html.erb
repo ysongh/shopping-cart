@@ -18,9 +18,9 @@
   <tbody>
     <% @carts.each do |cart| %>
       <tr>
-        <% if cart.customer.username == current_user.username %>
-          <td><%= cart.customer_id %></td>
-          <td><%= cart.customer.username %></td>
+        <% if cart.user.username == current_user.username || current_user.admin? %>
+          <td><%= cart.user_id %></td>
+          <td><%= cart.user.username %></td>
           <td><%= link_to 'Show', cart %></td>
           <td><%= link_to 'Edit', edit_cart_path(cart) %></td>
           <td><%= link_to 'Remove', cart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -41,6 +41,7 @@
 <%= link_to 'Customer Information', customers_path %>
 <%= link_to 'List of Items', items_path %>
 <%= link_to 'Your Order', orders_path %>
+<%= link_to 'User Information', users_path %>
 
 <br><br>
 <%= link_to "Logout", 'logout' %>
