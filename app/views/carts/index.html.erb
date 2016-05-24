@@ -24,6 +24,7 @@
           <td><%= link_to 'Show', cart %></td>
           <td><%= link_to 'Edit', edit_cart_path(cart) %></td>
           <td><%= link_to 'Remove', cart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Check Out', orders_path %></td>
         <% end %>
       </tr>
     <% end %>

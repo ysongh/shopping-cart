@@ -1,7 +1,7 @@
 == README
 
 My link:
-https://intense-refuge-20624.herokuapp.com
+https://intense-refuge-20624.herokuapp.comgit 
 
 Summary:
 Customer has many orders and has one cart.
