@@ -2,10 +2,12 @@
 
 one:
   name: MyString
-  qauntity: 1
-  price: 9.99
+  quantity: 1
+  inCart: 1
+  price: 1
 
 two:
   name: MyString
-  qauntity: 1
-  price: 9.99
+  quantity: 1
+  inCart: 1
+  price: 1

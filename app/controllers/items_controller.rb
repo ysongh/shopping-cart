@@ -11,8 +11,9 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
-    @item.reduce
-    @save
+     @item.reduce
+     @item.buy
+     @save
   end
 
   # GET /items/new
@@ -72,6 +73,6 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:name, :qauntity, :price)
+      params.require(:item).permit(:name, :quantity, :inCart, :price)
     end
 end

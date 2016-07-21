@@ -1,9 +1,11 @@
 class Item < ActiveRecord::Base
-    has_many :orders
-    has_many :carts
-    
     def reduce
-        self.qauntity = self.qauntity - 1
+        self.quantity = self.quantity - 1
+        self.save
+    end
+    
+    def buy
+        self.inCart = self.inCart + 1
         self.save
     end
 end

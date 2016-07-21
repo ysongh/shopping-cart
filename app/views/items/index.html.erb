@@ -10,7 +10,7 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Qauntity</th>
+      <th>Quantity</th>
       <th>Price</th>
       <th colspan="3"></th>
     </tr>
@@ -20,34 +20,32 @@
     <% @items.each do |item| %>
       <tr>
         <td><%= item.name %></td>
-        <% if item.qauntity <= 0 %>
+        <% if item.quantity <= 0 %>
           <td>Out of Stock</td>
         <% end %>
-        <% if item.qauntity >= 1 %>
-          <td><%= item.qauntity%></td>
+        <% if item.quantity >= 1 %>
+          <td><%= item.quantity%></td>
         <% end %>
         <td><%= number_to_currency item.price %></td>
-        <td><%= link_to 'Show', item %></td>
-        <td><%= link_to 'Edit', edit_item_path(item) %></td>
-        <td><%= link_to 'Remove', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Add to cart', carts_path %></td>
+        <td><%= link_to 'Add to Cart', item %></td>
+        <% if current_user.admin? %>
+          <td><%= link_to 'Edit', edit_item_path(item) %></td>
+          <td><%= link_to 'Remove', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
+<% if current_user.admin? %>
+  <%= link_to 'New Item', new_item_path %>
+<% end %>
 
-<%= link_to 'New Item', new_item_path %>
-
-<br><br>
+<br><br><%= link_to "Logout", 'logout' %><br>
 
 <p style = "font-size: 22px; font-weight: bold; color: blue">Links</p>
 
 <%= link_to 'User Information', users_path %>
 <%= link_to 'Your Cart', carts_path %>
 <%= link_to 'Your Order', orders_path %>
-
-
-<br><br>
-<%= link_to "Logout", 'logout' %>

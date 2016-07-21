@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
+  resources :items
   resources :orders
   resources :carts
   resources :users
-  resources :items
   resources :customers
   
   root 'sessions#new'
